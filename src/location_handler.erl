@@ -8,8 +8,6 @@
 %%%-------------------------------------------------------------------
 -module(location_handler).
 
--compile([{parse_transform, lager_transform}]).
-
 %% API
 -export([init/3]).
 -export([rest_init/2]).
