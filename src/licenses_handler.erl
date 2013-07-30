@@ -6,7 +6,7 @@
 %%% @end
 %%% Created : 25 Jul 2013 by mike <mike@mint15-mike>
 %%%-------------------------------------------------------------------
--module(location_handler).
+-module(licenses_handler).
 
 %% API
 -export([init/3]).

@@ -12,7 +12,20 @@
 start(_StartType, _StartArgs) ->
     Dispatch = cowboy_router:compile([
 	     {'_', [
-		    {"/locations", location_handler, []}
+	        {"/", cowboy_static, [
+                     {directory, {priv_dir, hermod, []}},
+                     {file, "home.json"},
+                     {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
+                 ]},
+            {"/rel/[...]", cowboy_static, [
+                     {directory, {priv_dir, hermod, [<<"rel">>]}},
+                     {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
+                  ]},
+            {"/param/[...]", cowboy_static, [
+                     {directory, {priv_dir, hermod, [<<"param">>]}},
+                     {mimetypes, {fun mimetypes:path_to_mimes/2, default}}
+                  ]},
+            {"/licenses", licenses_handler, []}
 	     ]}
     ]),
     {ok, _} = cowboy:start_http(http, 100, [{port, 8080}], [

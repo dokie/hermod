@@ -1,0 +1,21 @@
+{
+    "resources" : {
+        "http://localhost:8080/rel/licenses.html": {
+            "href": "/licenses/"
+        },
+        "http://localhost:8080/rel/license.html": {
+            "href-template": "/licenses/{license_id}",
+            "href-vars": {
+                "license_id": "http://localhost:8080/param/license_id.html"
+            },
+            "hints": {
+                "allow": ["GET", "PUT", "DELETE", "PATCH"],
+                "formats": {
+                    "application/json": {}
+                },
+                "accept-patch": ["application/json-patch"],
+                "accept-post": ["application/json"]
+            }
+        }
+    }
+}

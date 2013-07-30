@@ -5,4 +5,5 @@
               {applications,[kernel,stdlib,cowboy]},
               {mod,{hermod_app,[]}},
               {env,[]},
-              {modules,[hermod,hermod_app,hermod_sup,location_handler]}]}.
+              {modules,[hermod,hermod_app,hermod_sup,licenses_handler,
+                        location_handler]}]}.
